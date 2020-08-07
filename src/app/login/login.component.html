@@ -1,0 +1,44 @@
+
+<div class="container">
+  <mat-card> 
+     <mat-card-content>
+         <form class="example-form" >
+           <h1 *ngIf="authService && authService.userData | async">Hello {{ (authService.userData | async)?.email }}</h1>
+           <div *ngIf="!(authService.userData | async)">
+     
+     <mat-form-field class="example-full-width">
+     <input  matInput placeholder="Email" name="email" type="text"  [(ngModel)]="email" >
+       <mat-error >
+         Please provide a valid email address
+       </mat-error>
+    </mat-form-field>
+     
+ 
+      <mat-form-field class="example-full-width">
+     <input  matInput placeholder="Password"type="password" name="password" [(ngModel)]="password"  >
+      <mat-error>
+         Please provide a valid password
+       </mat-error>
+     </mat-form-field>
+   
+     <div class="example-button">
+     <button  mat-raised-button color="primary" (click)="signUp()" class="btn btn-default">Sign Up</button>
+     <button mat-raised-button color="primary" (click)="signIn()" class="btn btn-default" style="margin-left:5px;">Login</button>
+     <!-- <button mat-raised-button color="accent" type="button" (click)="FacebookAuth()"> Log in with Facebook </button>
+      <button mat-raised-button color="accent" type="button" (click)="GoogleAuth()">Log in with Google </button> -->
+      
+     </div>
+     </div>
+ 
+     <button mat-raised-button color="accent" (click)="signOut()" class="btn btn-primary" *ngIf="authService.userData | async">Logout</button>
+     
+ </form>
+ <div class=social-links-container>
+     <div class="hr"></div>
+         <div class="tag">Or, Sign in with</div><br>
+            <app-social-links></app-social-links>
+ </div>
+ </mat-card-content>
+ </mat-card>
+ </div>
+   

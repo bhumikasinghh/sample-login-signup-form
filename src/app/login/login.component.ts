@@ -15,15 +15,6 @@ password: string;
   constructor(public authService: AuthService) { }
 
   
-  // Sign in with Facebook
-  FacebookAuth() {
-    return this.authService.AuthLogin((new auth.FacebookAuthProvider()));
-  }  
-
-// Sign in with Google
-  GoogleAuth() {
-    return this.authService.AuthLogin((new auth.GoogleAuthProvider()));
-  }
   
   // Sign up with Email and Password
   signUp() {

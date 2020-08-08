@@ -17,6 +17,7 @@ import {MatInputModule} from '@angular/material/input';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SocialLinksComponent } from './social-links/social-links.component';
 import {MatIconModule} from '@angular/material/icon';
+import { AuthService } from './services/auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatIconModule
 
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
